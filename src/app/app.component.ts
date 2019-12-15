@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScheduleService } from './schedule.service';
 
 @Component({
   selector: 'my-app',
@@ -7,9 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   schedule = 'Angular';
+
+  constructor(private scheduleService: ScheduleService) { }
+  
   getNextTrain(fromStation: string, toStation: string) {
-    console.log(fromStation + toStation);
-    let nextTrainAt:string = "2:15";//query to get this
+    let nextTrainAt:string = this.scheduleService.getNextTrain(fromStation, toStation);
     let inNextMins:string = this.calculateInNextMins(nextTrainAt);
     this.schedule = this.formatScheduleMessage(nextTrainAt, inNextMins);
   }
