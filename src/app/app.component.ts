@@ -9,13 +9,13 @@ export class AppComponent  {
   schedule = 'Angular';
   getNextTrain(fromStation: string, toStation: string) {
     console.log(fromStation + toStation);
-    let nextTrainAt = "2:15";//query to get this
-    let inNextMins = this.calculateInNextMins(nextTrainAt);
+    let nextTrainAt:string = "2:15";//query to get this
+    let inNextMins:string = this.calculateInNextMins(nextTrainAt);
     this.schedule = this.formatScheduleMessage(nextTrainAt, inNextMins);
   }
 
   private calculateInNextMins(nextTrainAt:string){
-    let inNextMins ="8";// calculate this with current time
+    let inNextMins:string ="8";// calculate this with current time
     return inNextMins;
   }
 
