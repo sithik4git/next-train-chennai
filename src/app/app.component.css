@@ -1,0 +1,7 @@
+.schedule{
+  width: 100%;
+  border:1px solid;
+}
+.schedule td {
+  text-align: center;
+}
